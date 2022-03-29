@@ -19,7 +19,7 @@
       </div>
       <div class="lg:w-full relative">
         <button @click="dropdown = true" class="flex items-center w-full hover:bg-lightblue rounded-full p-2 focus:outline-none">
-          <img src="profile.png" class="w-10 h-10 rounded-full border border-lighter" />
+          <img src="https://pbs.twimg.com/profile_images/1227136288848924672/lvIDzw4z_400x400.jpg" class="w-10 h-10 rounded-full border border-lighter" />
           <div class="hidden lg:block ml-4">
             <p class="text-sm font-bold leading-tight"> Ashish Bakliwal </p>
             <p class="text-sm leading-tight"> @ashishbakliwal8 </p>
@@ -28,7 +28,7 @@
         </button>
         <div v-if="dropdown === true" class="absolute bottom-0 left-0 w-64 rounded-lg shadow-md border-lightest bg-white mb-16">
           <button @click="dropdown = false" class="p-3 flex items-center w-full hover:bg-lightest p-2 focus:outline-none">
-            <img src="profile.png" class="w-10 h-10 rounded-full border border-lighter" />
+            <img src="https://pbs.twimg.com/profile_images/1227136288848924672/lvIDzw4z_400x400.jpg" class="w-10 h-10 rounded-full border border-lighter" />
             <div class="ml-4">
               <p class="text-sm font-bold leading-tight"> Ashish Bakliwal </p>
               <p class="text-sm leading-tight"> @ashishbakliwal8 </p>
@@ -52,7 +52,7 @@
       </div>
       <div class="px-5 py-3 border-b-8 border-lighter flex">
         <div class="flex-none">
-          <img src="profile.png" class="flex-none w-12 h-12 rounded-full border border-lighter"/>
+          <img src="https://pbs.twimg.com/profile_images/1227136288848924672/lvIDzw4z_400x400.jpg" class="flex-none w-12 h-12 rounded-full border border-lighter"/>
         </div>
         <form v-on:submit.prevent = "addNewTweet" class="w-full px-4 relative">
           <textarea v-model="tweet.content" placeholder="What's up?" class="mt-3 pb-3 w-full focus:outline-none"/>
@@ -70,7 +70,7 @@
       <div class="flex flex-col-reverse">
         <div v-for="tweet in tweets" v-bind:key="tweet" class="w-full p-4 border-b hover:bg-lighter flex">
           <div class="flex-none mr-4">
-            <img src="profile.png" class="h-12 w-12 rounded-full flex-none"/>
+            <img src="https://pbs.twimg.com/profile_images/1227136288848924672/lvIDzw4z_400x400.jpg" class="h-12 w-12 rounded-full flex-none"/>
           </div>
           <div class="w-full">
             <div class="flex items-center w-full">

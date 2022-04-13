@@ -34,7 +34,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`${config.apiUrl}/users/register`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:4000/users/register`, requestOptions).then(handleResponse);
 }
 
 
@@ -44,7 +44,7 @@ function getById(id) {
         headers: authHeader()
     };
 
-    return fetch(`${config.apiUrl}/users/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:4000/users/${id}`, requestOptions).then(handleResponse);
 }
 
 

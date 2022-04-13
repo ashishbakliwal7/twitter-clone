@@ -27,7 +27,7 @@
         </div>
 
         <div class="mt-10">
-          <form>
+          <form @submit.prevent="handleSubmit">
           
             <div class="flex flex-col mb-5">
               <label
@@ -55,6 +55,7 @@
                 <input
                   id="email"
                   type="email"
+                  v-model="email"
                   name="email"
                   class="
                     text-sm
@@ -70,7 +71,9 @@
                   placeholder="Enter your email"
                 />
               </div>
+                <div v-show="submitted && !email" class="invalid-feedback">Username is required</div>
             </div>
+            
             <div class="flex flex-col mb-6">
               <label
                 for="password"
@@ -99,6 +102,7 @@
                 <input
                   id="password"
                   type="password"
+                  v-model="password"
                   name="password"
                   class="
                     text-sm
@@ -114,11 +118,11 @@
                   placeholder="Enter your password"
                 />
               </div>
+              <div v-show="submitted && !password" class="invalid-feedback">Password is required</div>
             </div>
 
             <div class="flex w-full">
-              <a
-                href="/home"
+              <button
                 class="
                   flex
                   mt-2
@@ -153,7 +157,7 @@
                     />
                   </svg>
                 </span>
-              </a>
+              </button>
             </div>
           </form>
         </div>
@@ -184,7 +188,34 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
   name: 'login',
+  data ()  {
+    return {
+            email: '',
+            password: '',
+            submitted: false,
+        }
+  },
+    computed: {
+        ...mapState('account', ['status'])
+    },
+    created () {
+    
+    },
+
+    methods: {
+      ...mapActions('account', ['login', 'logout']),
+        handleSubmit (e) {
+            this.submitted = true;
+            const { email, password } = this;
+            console.log(password,email)
+            if (email && password) {
+                this.login({ email, password })
+            }
+        }
+    }
 }
 </script>

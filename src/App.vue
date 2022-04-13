@@ -1,12 +1,31 @@
 <template>
  <div id="app">
+   <div v-if="alert.message" :class="`alert ${alert.type}`">Invalid Request</div>
   <router-view></router-view>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
-  name: 'App'
+  name: 'App',
+  computed: {
+        ...mapState({
+            alert: state => state.alert
+        })
+    },
+    methods: {
+        ...mapActions({
+            clearAlert: 'alert/clear' 
+        })
+    },
+    watch: {
+        $route (to, from){
+            // clear alert on location change
+            this.clearAlert();
+        }
+    } 
 }
 </script>
 

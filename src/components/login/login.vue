@@ -16,6 +16,7 @@
           rounded-3xl
           w-50
           max-w-md
+          items-center
         "
       >
         <i class='fab fa-twitter' style='font-size:48px;color:#1DA1F2'></i>
